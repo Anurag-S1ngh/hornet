@@ -1,0 +1,4358 @@
+{
+  "type": "base",
+  "version": "9",
+  "dialect": "postgres",
+  "id": "0d9fea56-bdbc-48f5-b864-30459e02df69",
+  "prevIds": ["00000000-0000-0000-0000-000000000000"],
+  "footprints": [
+    {
+      "statementType": "create_enum",
+      "statementTarget": ["enum", "public", "evaluator_kind"],
+      "writes": [
+        "s|enum|public.evaluator_kind",
+        "n|enum|public.evaluator_kind",
+        "e|enum|public.evaluator_kind",
+        "n|type|public.evaluator_kind"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_enum",
+      "statementTarget": ["enum", "public", "evaluator_result_status"],
+      "writes": [
+        "s|enum|public.evaluator_result_status",
+        "n|enum|public.evaluator_result_status",
+        "e|enum|public.evaluator_result_status",
+        "n|type|public.evaluator_result_status"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_enum",
+      "statementTarget": ["enum", "public", "experiment_status"],
+      "writes": [
+        "s|enum|public.experiment_status",
+        "n|enum|public.experiment_status",
+        "e|enum|public.experiment_status",
+        "n|type|public.experiment_status"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_enum",
+      "statementTarget": ["enum", "public", "task_status"],
+      "writes": [
+        "s|enum|public.task_status",
+        "n|enum|public.task_status",
+        "e|enum|public.task_status",
+        "n|type|public.task_status"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_enum",
+      "statementTarget": ["enum", "public", "workspace_role"],
+      "writes": [
+        "s|enum|public.workspace_role",
+        "n|enum|public.workspace_role",
+        "e|enum|public.workspace_role",
+        "n|type|public.workspace_role"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "agent_versions"],
+      "writes": [
+        "s|tbl|public.agent_versions",
+        "n|tbl|public.agent_versions",
+        "e|tbl|public.agent_versions",
+        "n|rel|public.agent_versions",
+        "n|type|public.agent_versions",
+        "n|rel|public.agent_versions_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "agents"],
+      "writes": [
+        "s|tbl|public.agents",
+        "n|tbl|public.agents",
+        "e|tbl|public.agents",
+        "n|rel|public.agents",
+        "n|type|public.agents",
+        "n|rel|public.agents_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "sessions"],
+      "writes": [
+        "s|tbl|public.sessions",
+        "n|tbl|public.sessions",
+        "e|tbl|public.sessions",
+        "n|rel|public.sessions",
+        "n|type|public.sessions",
+        "n|rel|public.sessions_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "users"],
+      "writes": [
+        "s|tbl|public.users",
+        "n|tbl|public.users",
+        "e|tbl|public.users",
+        "n|rel|public.users",
+        "n|type|public.users",
+        "n|rel|public.users_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "dataset_items"],
+      "writes": [
+        "s|tbl|public.dataset_items",
+        "n|tbl|public.dataset_items",
+        "e|tbl|public.dataset_items",
+        "n|rel|public.dataset_items",
+        "n|type|public.dataset_items",
+        "n|rel|public.dataset_items_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "dataset_versions"],
+      "writes": [
+        "s|tbl|public.dataset_versions",
+        "n|tbl|public.dataset_versions",
+        "e|tbl|public.dataset_versions",
+        "n|rel|public.dataset_versions",
+        "n|type|public.dataset_versions",
+        "n|rel|public.dataset_versions_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "datasets"],
+      "writes": [
+        "s|tbl|public.datasets",
+        "n|tbl|public.datasets",
+        "e|tbl|public.datasets",
+        "n|rel|public.datasets",
+        "n|type|public.datasets",
+        "n|rel|public.datasets_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "evaluator_versions"],
+      "writes": [
+        "s|tbl|public.evaluator_versions",
+        "n|tbl|public.evaluator_versions",
+        "e|tbl|public.evaluator_versions",
+        "n|rel|public.evaluator_versions",
+        "n|type|public.evaluator_versions",
+        "n|rel|public.evaluator_versions_pkey"
+      ],
+      "reads": ["n|sch|public", "n|enum|public.evaluator_kind"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "evaluators"],
+      "writes": [
+        "s|tbl|public.evaluators",
+        "n|tbl|public.evaluators",
+        "e|tbl|public.evaluators",
+        "n|rel|public.evaluators",
+        "n|type|public.evaluators",
+        "n|rel|public.evaluators_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "evaluation_tasks"],
+      "writes": [
+        "s|tbl|public.evaluation_tasks",
+        "n|tbl|public.evaluation_tasks",
+        "e|tbl|public.evaluation_tasks",
+        "n|rel|public.evaluation_tasks",
+        "n|type|public.evaluation_tasks",
+        "n|rel|public.evaluation_tasks_pkey"
+      ],
+      "reads": ["n|sch|public", "n|enum|public.task_status"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "experiment_evaluators"],
+      "writes": [
+        "s|tbl|public.experiment_evaluators",
+        "n|tbl|public.experiment_evaluators",
+        "e|tbl|public.experiment_evaluators",
+        "n|rel|public.experiment_evaluators",
+        "n|type|public.experiment_evaluators",
+        "n|rel|public.experiment_evaluators_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "experiments"],
+      "writes": [
+        "s|tbl|public.experiments",
+        "n|tbl|public.experiments",
+        "e|tbl|public.experiments",
+        "n|rel|public.experiments",
+        "n|type|public.experiments",
+        "n|rel|public.experiments_pkey"
+      ],
+      "reads": ["n|sch|public", "n|enum|public.experiment_status"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "api_keys"],
+      "writes": [
+        "s|tbl|public.api_keys",
+        "n|tbl|public.api_keys",
+        "e|tbl|public.api_keys",
+        "n|rel|public.api_keys",
+        "n|type|public.api_keys",
+        "n|rel|public.api_keys_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "projects"],
+      "writes": [
+        "s|tbl|public.projects",
+        "n|tbl|public.projects",
+        "e|tbl|public.projects",
+        "n|rel|public.projects",
+        "n|type|public.projects",
+        "n|rel|public.projects_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "evaluator_results"],
+      "writes": [
+        "s|tbl|public.evaluator_results",
+        "n|tbl|public.evaluator_results",
+        "e|tbl|public.evaluator_results",
+        "n|rel|public.evaluator_results",
+        "n|type|public.evaluator_results",
+        "n|rel|public.evaluator_results_pkey"
+      ],
+      "reads": ["n|sch|public", "n|enum|public.evaluator_result_status"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "workspace_members"],
+      "writes": [
+        "s|tbl|public.workspace_members",
+        "n|tbl|public.workspace_members",
+        "e|tbl|public.workspace_members",
+        "n|rel|public.workspace_members",
+        "n|type|public.workspace_members",
+        "n|rel|public.workspace_members_pkey"
+      ],
+      "reads": ["n|sch|public", "n|enum|public.workspace_role"]
+    },
+    {
+      "statementType": "create_table",
+      "statementTarget": ["table", "public", "workspaces"],
+      "writes": [
+        "s|tbl|public.workspaces",
+        "n|tbl|public.workspaces",
+        "e|tbl|public.workspaces",
+        "n|rel|public.workspaces",
+        "n|type|public.workspaces",
+        "n|rel|public.workspaces_pkey"
+      ],
+      "reads": ["n|sch|public"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "agent_versions",
+        "agent_versions_agent_version_unique"
+      ],
+      "writes": [
+        "s|idx|public.agent_versions_agent_version_unique",
+        "n|idx|public.agent_versions_agent_version_unique",
+        "e|idx|public.agent_versions_agent_version_unique",
+        "n|rel|public.agent_versions_agent_version_unique"
+      ],
+      "reads": [
+        "n|tbl|public.agent_versions",
+        "n|sch|public",
+        "n|col|public.agent_versions.agent_id",
+        "n|col|public.agent_versions.version"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "agents", "agents_project_name_unique"],
+      "writes": [
+        "s|idx|public.agents_project_name_unique",
+        "n|idx|public.agents_project_name_unique",
+        "e|idx|public.agents_project_name_unique",
+        "n|rel|public.agents_project_name_unique"
+      ],
+      "reads": [
+        "n|tbl|public.agents",
+        "n|sch|public",
+        "n|col|public.agents.project_id",
+        "n|col|public.agents.name"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "agents", "agents_project_idx"],
+      "writes": [
+        "s|idx|public.agents_project_idx",
+        "n|idx|public.agents_project_idx",
+        "e|idx|public.agents_project_idx",
+        "n|rel|public.agents_project_idx"
+      ],
+      "reads": ["n|tbl|public.agents", "n|sch|public", "n|col|public.agents.project_id"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "sessions", "sessions_token_hash_unique"],
+      "writes": [
+        "s|idx|public.sessions_token_hash_unique",
+        "n|idx|public.sessions_token_hash_unique",
+        "e|idx|public.sessions_token_hash_unique",
+        "n|rel|public.sessions_token_hash_unique"
+      ],
+      "reads": ["n|tbl|public.sessions", "n|sch|public", "n|col|public.sessions.token_hash"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "sessions", "sessions_user_expires_idx"],
+      "writes": [
+        "s|idx|public.sessions_user_expires_idx",
+        "n|idx|public.sessions_user_expires_idx",
+        "e|idx|public.sessions_user_expires_idx",
+        "n|rel|public.sessions_user_expires_idx"
+      ],
+      "reads": [
+        "n|tbl|public.sessions",
+        "n|sch|public",
+        "n|col|public.sessions.user_id",
+        "n|col|public.sessions.expires_at"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "sessions", "sessions_expires_at_idx"],
+      "writes": [
+        "s|idx|public.sessions_expires_at_idx",
+        "n|idx|public.sessions_expires_at_idx",
+        "e|idx|public.sessions_expires_at_idx",
+        "n|rel|public.sessions_expires_at_idx"
+      ],
+      "reads": ["n|tbl|public.sessions", "n|sch|public", "n|col|public.sessions.expires_at"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "users", "users_email_unique"],
+      "writes": [
+        "s|idx|public.users_email_unique",
+        "n|idx|public.users_email_unique",
+        "e|idx|public.users_email_unique",
+        "n|rel|public.users_email_unique"
+      ],
+      "reads": ["n|tbl|public.users", "n|sch|public", "n|col|public.users.email"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "dataset_items",
+        "dataset_items_version_external_id_unique"
+      ],
+      "writes": [
+        "s|idx|public.dataset_items_version_external_id_unique",
+        "n|idx|public.dataset_items_version_external_id_unique",
+        "e|idx|public.dataset_items_version_external_id_unique",
+        "n|rel|public.dataset_items_version_external_id_unique"
+      ],
+      "reads": [
+        "n|tbl|public.dataset_items",
+        "n|sch|public",
+        "n|col|public.dataset_items.dataset_version_id",
+        "n|col|public.dataset_items.external_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "dataset_items", "dataset_items_version_position_idx"],
+      "writes": [
+        "s|idx|public.dataset_items_version_position_idx",
+        "n|idx|public.dataset_items_version_position_idx",
+        "e|idx|public.dataset_items_version_position_idx",
+        "n|rel|public.dataset_items_version_position_idx"
+      ],
+      "reads": [
+        "n|tbl|public.dataset_items",
+        "n|sch|public",
+        "n|col|public.dataset_items.dataset_version_id",
+        "n|col|public.dataset_items.position"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "dataset_items", "dataset_items_metadata_idx"],
+      "writes": [
+        "s|idx|public.dataset_items_metadata_idx",
+        "n|idx|public.dataset_items_metadata_idx",
+        "e|idx|public.dataset_items_metadata_idx",
+        "n|rel|public.dataset_items_metadata_idx"
+      ],
+      "reads": ["n|tbl|public.dataset_items", "n|sch|public", "n|col|public.dataset_items.metadata"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "dataset_versions",
+        "dataset_versions_dataset_version_unique"
+      ],
+      "writes": [
+        "s|idx|public.dataset_versions_dataset_version_unique",
+        "n|idx|public.dataset_versions_dataset_version_unique",
+        "e|idx|public.dataset_versions_dataset_version_unique",
+        "n|rel|public.dataset_versions_dataset_version_unique"
+      ],
+      "reads": [
+        "n|tbl|public.dataset_versions",
+        "n|sch|public",
+        "n|col|public.dataset_versions.dataset_id",
+        "n|col|public.dataset_versions.version"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "datasets", "datasets_project_name_unique"],
+      "writes": [
+        "s|idx|public.datasets_project_name_unique",
+        "n|idx|public.datasets_project_name_unique",
+        "e|idx|public.datasets_project_name_unique",
+        "n|rel|public.datasets_project_name_unique"
+      ],
+      "reads": [
+        "n|tbl|public.datasets",
+        "n|sch|public",
+        "n|col|public.datasets.project_id",
+        "n|col|public.datasets.name"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "datasets", "datasets_project_idx"],
+      "writes": [
+        "s|idx|public.datasets_project_idx",
+        "n|idx|public.datasets_project_idx",
+        "e|idx|public.datasets_project_idx",
+        "n|rel|public.datasets_project_idx"
+      ],
+      "reads": ["n|tbl|public.datasets", "n|sch|public", "n|col|public.datasets.project_id"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "evaluator_versions",
+        "evaluator_versions_evaluator_version_unique"
+      ],
+      "writes": [
+        "s|idx|public.evaluator_versions_evaluator_version_unique",
+        "n|idx|public.evaluator_versions_evaluator_version_unique",
+        "e|idx|public.evaluator_versions_evaluator_version_unique",
+        "n|rel|public.evaluator_versions_evaluator_version_unique"
+      ],
+      "reads": [
+        "n|tbl|public.evaluator_versions",
+        "n|sch|public",
+        "n|col|public.evaluator_versions.evaluator_id",
+        "n|col|public.evaluator_versions.version"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "evaluators", "evaluators_project_name_unique"],
+      "writes": [
+        "s|idx|public.evaluators_project_name_unique",
+        "n|idx|public.evaluators_project_name_unique",
+        "e|idx|public.evaluators_project_name_unique",
+        "n|rel|public.evaluators_project_name_unique"
+      ],
+      "reads": [
+        "n|tbl|public.evaluators",
+        "n|sch|public",
+        "n|col|public.evaluators.project_id",
+        "n|col|public.evaluators.name"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "evaluators", "evaluators_project_idx"],
+      "writes": [
+        "s|idx|public.evaluators_project_idx",
+        "n|idx|public.evaluators_project_idx",
+        "e|idx|public.evaluators_project_idx",
+        "n|rel|public.evaluators_project_idx"
+      ],
+      "reads": ["n|tbl|public.evaluators", "n|sch|public", "n|col|public.evaluators.project_id"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "evaluation_tasks",
+        "evaluation_tasks_experiment_item_unique"
+      ],
+      "writes": [
+        "s|idx|public.evaluation_tasks_experiment_item_unique",
+        "n|idx|public.evaluation_tasks_experiment_item_unique",
+        "e|idx|public.evaluation_tasks_experiment_item_unique",
+        "n|rel|public.evaluation_tasks_experiment_item_unique"
+      ],
+      "reads": [
+        "n|tbl|public.evaluation_tasks",
+        "n|sch|public",
+        "n|col|public.evaluation_tasks.experiment_id",
+        "n|col|public.evaluation_tasks.dataset_item_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "evaluation_tasks",
+        "evaluation_tasks_experiment_status_idx"
+      ],
+      "writes": [
+        "s|idx|public.evaluation_tasks_experiment_status_idx",
+        "n|idx|public.evaluation_tasks_experiment_status_idx",
+        "e|idx|public.evaluation_tasks_experiment_status_idx",
+        "n|rel|public.evaluation_tasks_experiment_status_idx"
+      ],
+      "reads": [
+        "n|tbl|public.evaluation_tasks",
+        "n|sch|public",
+        "n|col|public.evaluation_tasks.experiment_id",
+        "n|col|public.evaluation_tasks.status"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "evaluation_tasks",
+        "evaluation_tasks_status_started_idx"
+      ],
+      "writes": [
+        "s|idx|public.evaluation_tasks_status_started_idx",
+        "n|idx|public.evaluation_tasks_status_started_idx",
+        "e|idx|public.evaluation_tasks_status_started_idx",
+        "n|rel|public.evaluation_tasks_status_started_idx"
+      ],
+      "reads": [
+        "n|tbl|public.evaluation_tasks",
+        "n|sch|public",
+        "n|col|public.evaluation_tasks.status",
+        "n|col|public.evaluation_tasks.started_at"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "evaluation_tasks",
+        "evaluation_tasks_dataset_item_idx"
+      ],
+      "writes": [
+        "s|idx|public.evaluation_tasks_dataset_item_idx",
+        "n|idx|public.evaluation_tasks_dataset_item_idx",
+        "e|idx|public.evaluation_tasks_dataset_item_idx",
+        "n|rel|public.evaluation_tasks_dataset_item_idx"
+      ],
+      "reads": [
+        "n|tbl|public.evaluation_tasks",
+        "n|sch|public",
+        "n|col|public.evaluation_tasks.dataset_item_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "experiment_evaluators",
+        "experiment_evaluators_experiment_evaluator_unique"
+      ],
+      "writes": [
+        "s|idx|public.experiment_evaluators_experiment_evaluator_unique",
+        "n|idx|public.experiment_evaluators_experiment_evaluator_unique",
+        "e|idx|public.experiment_evaluators_experiment_evaluator_unique",
+        "n|rel|public.experiment_evaluators_experiment_evaluator_unique"
+      ],
+      "reads": [
+        "n|tbl|public.experiment_evaluators",
+        "n|sch|public",
+        "n|col|public.experiment_evaluators.experiment_id",
+        "n|col|public.experiment_evaluators.evaluator_version_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "experiment_evaluators",
+        "experiment_evaluators_experiment_position_unique"
+      ],
+      "writes": [
+        "s|idx|public.experiment_evaluators_experiment_position_unique",
+        "n|idx|public.experiment_evaluators_experiment_position_unique",
+        "e|idx|public.experiment_evaluators_experiment_position_unique",
+        "n|rel|public.experiment_evaluators_experiment_position_unique"
+      ],
+      "reads": [
+        "n|tbl|public.experiment_evaluators",
+        "n|sch|public",
+        "n|col|public.experiment_evaluators.experiment_id",
+        "n|col|public.experiment_evaluators.position"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "experiment_evaluators",
+        "experiment_evaluators_evaluator_version_idx"
+      ],
+      "writes": [
+        "s|idx|public.experiment_evaluators_evaluator_version_idx",
+        "n|idx|public.experiment_evaluators_evaluator_version_idx",
+        "e|idx|public.experiment_evaluators_evaluator_version_idx",
+        "n|rel|public.experiment_evaluators_evaluator_version_idx"
+      ],
+      "reads": [
+        "n|tbl|public.experiment_evaluators",
+        "n|sch|public",
+        "n|col|public.experiment_evaluators.evaluator_version_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "experiments", "experiments_project_created_idx"],
+      "writes": [
+        "s|idx|public.experiments_project_created_idx",
+        "n|idx|public.experiments_project_created_idx",
+        "e|idx|public.experiments_project_created_idx",
+        "n|rel|public.experiments_project_created_idx"
+      ],
+      "reads": [
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|col|public.experiments.project_id",
+        "n|col|public.experiments.created_at"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "experiments", "experiments_status_idx"],
+      "writes": [
+        "s|idx|public.experiments_status_idx",
+        "n|idx|public.experiments_status_idx",
+        "e|idx|public.experiments_status_idx",
+        "n|rel|public.experiments_status_idx"
+      ],
+      "reads": ["n|tbl|public.experiments", "n|sch|public", "n|col|public.experiments.status"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "experiments", "experiments_dataset_version_idx"],
+      "writes": [
+        "s|idx|public.experiments_dataset_version_idx",
+        "n|idx|public.experiments_dataset_version_idx",
+        "e|idx|public.experiments_dataset_version_idx",
+        "n|rel|public.experiments_dataset_version_idx"
+      ],
+      "reads": [
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|col|public.experiments.dataset_version_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "experiments", "experiments_agent_version_idx"],
+      "writes": [
+        "s|idx|public.experiments_agent_version_idx",
+        "n|idx|public.experiments_agent_version_idx",
+        "e|idx|public.experiments_agent_version_idx",
+        "n|rel|public.experiments_agent_version_idx"
+      ],
+      "reads": [
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|col|public.experiments.agent_version_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "api_keys", "api_keys_key_hash_unique"],
+      "writes": [
+        "s|idx|public.api_keys_key_hash_unique",
+        "n|idx|public.api_keys_key_hash_unique",
+        "e|idx|public.api_keys_key_hash_unique",
+        "n|rel|public.api_keys_key_hash_unique"
+      ],
+      "reads": ["n|tbl|public.api_keys", "n|sch|public", "n|col|public.api_keys.key_hash"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "api_keys", "api_keys_project_idx"],
+      "writes": [
+        "s|idx|public.api_keys_project_idx",
+        "n|idx|public.api_keys_project_idx",
+        "e|idx|public.api_keys_project_idx",
+        "n|rel|public.api_keys_project_idx"
+      ],
+      "reads": ["n|tbl|public.api_keys", "n|sch|public", "n|col|public.api_keys.project_id"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "projects", "projects_workspace_name_unique"],
+      "writes": [
+        "s|idx|public.projects_workspace_name_unique",
+        "n|idx|public.projects_workspace_name_unique",
+        "e|idx|public.projects_workspace_name_unique",
+        "n|rel|public.projects_workspace_name_unique"
+      ],
+      "reads": [
+        "n|tbl|public.projects",
+        "n|sch|public",
+        "n|col|public.projects.workspace_id",
+        "n|col|public.projects.name"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "projects", "projects_workspace_idx"],
+      "writes": [
+        "s|idx|public.projects_workspace_idx",
+        "n|idx|public.projects_workspace_idx",
+        "e|idx|public.projects_workspace_idx",
+        "n|rel|public.projects_workspace_idx"
+      ],
+      "reads": ["n|tbl|public.projects", "n|sch|public", "n|col|public.projects.workspace_id"]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "evaluator_results",
+        "evaluator_results_task_evaluator_unique"
+      ],
+      "writes": [
+        "s|idx|public.evaluator_results_task_evaluator_unique",
+        "n|idx|public.evaluator_results_task_evaluator_unique",
+        "e|idx|public.evaluator_results_task_evaluator_unique",
+        "n|rel|public.evaluator_results_task_evaluator_unique"
+      ],
+      "reads": [
+        "n|tbl|public.evaluator_results",
+        "n|sch|public",
+        "n|col|public.evaluator_results.task_id",
+        "n|col|public.evaluator_results.evaluator_version_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "evaluator_results", "evaluator_results_task_idx"],
+      "writes": [
+        "s|idx|public.evaluator_results_task_idx",
+        "n|idx|public.evaluator_results_task_idx",
+        "e|idx|public.evaluator_results_task_idx",
+        "n|rel|public.evaluator_results_task_idx"
+      ],
+      "reads": [
+        "n|tbl|public.evaluator_results",
+        "n|sch|public",
+        "n|col|public.evaluator_results.task_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "evaluator_results",
+        "evaluator_results_evaluator_status_idx"
+      ],
+      "writes": [
+        "s|idx|public.evaluator_results_evaluator_status_idx",
+        "n|idx|public.evaluator_results_evaluator_status_idx",
+        "e|idx|public.evaluator_results_evaluator_status_idx",
+        "n|rel|public.evaluator_results_evaluator_status_idx"
+      ],
+      "reads": [
+        "n|tbl|public.evaluator_results",
+        "n|sch|public",
+        "n|col|public.evaluator_results.evaluator_version_id",
+        "n|col|public.evaluator_results.status"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "workspace_members",
+        "workspace_members_workspace_user_unique"
+      ],
+      "writes": [
+        "s|idx|public.workspace_members_workspace_user_unique",
+        "n|idx|public.workspace_members_workspace_user_unique",
+        "e|idx|public.workspace_members_workspace_user_unique",
+        "n|rel|public.workspace_members_workspace_user_unique"
+      ],
+      "reads": [
+        "n|tbl|public.workspace_members",
+        "n|sch|public",
+        "n|col|public.workspace_members.workspace_id",
+        "n|col|public.workspace_members.user_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "workspace_members", "workspace_members_user_idx"],
+      "writes": [
+        "s|idx|public.workspace_members_user_idx",
+        "n|idx|public.workspace_members_user_idx",
+        "e|idx|public.workspace_members_user_idx",
+        "n|rel|public.workspace_members_user_idx"
+      ],
+      "reads": [
+        "n|tbl|public.workspace_members",
+        "n|sch|public",
+        "n|col|public.workspace_members.user_id"
+      ]
+    },
+    {
+      "statementType": "create_index",
+      "statementTarget": ["index", "public", "workspaces", "workspaces_created_by_idx"],
+      "writes": [
+        "s|idx|public.workspaces_created_by_idx",
+        "n|idx|public.workspaces_created_by_idx",
+        "e|idx|public.workspaces_created_by_idx",
+        "n|rel|public.workspaces_created_by_idx"
+      ],
+      "reads": ["n|tbl|public.workspaces", "n|sch|public", "n|col|public.workspaces.created_by"]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "agent_versions"],
+      "writes": [
+        "s|fk|public.agent_versions.agent_versions_agent_id_agents_id_fkey",
+        "n|fk|public.agent_versions.agent_versions_agent_id_agents_id_fkey",
+        "e|fk|public.agent_versions.agent_versions_agent_id_agents_id_fkey",
+        "n|con|public.agent_versions.agent_versions_agent_id_agents_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.agent_versions",
+        "n|sch|public",
+        "n|tbl|public.agents",
+        "n|sch|public",
+        "n|col|public.agent_versions.agent_id",
+        "n|col|public.agents.id",
+        "e|uniqueness|public.agents.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "agents"],
+      "writes": [
+        "s|fk|public.agents.agents_project_id_projects_id_fkey",
+        "n|fk|public.agents.agents_project_id_projects_id_fkey",
+        "e|fk|public.agents.agents_project_id_projects_id_fkey",
+        "n|con|public.agents.agents_project_id_projects_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.agents",
+        "n|sch|public",
+        "n|tbl|public.projects",
+        "n|sch|public",
+        "n|col|public.agents.project_id",
+        "n|col|public.projects.id",
+        "e|uniqueness|public.projects.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "sessions"],
+      "writes": [
+        "s|fk|public.sessions.sessions_user_id_users_id_fkey",
+        "n|fk|public.sessions.sessions_user_id_users_id_fkey",
+        "e|fk|public.sessions.sessions_user_id_users_id_fkey",
+        "n|con|public.sessions.sessions_user_id_users_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.sessions",
+        "n|sch|public",
+        "n|tbl|public.users",
+        "n|sch|public",
+        "n|col|public.sessions.user_id",
+        "n|col|public.users.id",
+        "e|uniqueness|public.users.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "dataset_items"],
+      "writes": [
+        "s|fk|public.dataset_items.dataset_items_dataset_version_id_dataset_versions_id_fkey",
+        "n|fk|public.dataset_items.dataset_items_dataset_version_id_dataset_versions_id_fkey",
+        "e|fk|public.dataset_items.dataset_items_dataset_version_id_dataset_versions_id_fkey",
+        "n|con|public.dataset_items.dataset_items_dataset_version_id_dataset_versions_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.dataset_items",
+        "n|sch|public",
+        "n|tbl|public.dataset_versions",
+        "n|sch|public",
+        "n|col|public.dataset_items.dataset_version_id",
+        "n|col|public.dataset_versions.id",
+        "e|uniqueness|public.dataset_versions.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "dataset_versions"],
+      "writes": [
+        "s|fk|public.dataset_versions.dataset_versions_dataset_id_datasets_id_fkey",
+        "n|fk|public.dataset_versions.dataset_versions_dataset_id_datasets_id_fkey",
+        "e|fk|public.dataset_versions.dataset_versions_dataset_id_datasets_id_fkey",
+        "n|con|public.dataset_versions.dataset_versions_dataset_id_datasets_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.dataset_versions",
+        "n|sch|public",
+        "n|tbl|public.datasets",
+        "n|sch|public",
+        "n|col|public.dataset_versions.dataset_id",
+        "n|col|public.datasets.id",
+        "e|uniqueness|public.datasets.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "datasets"],
+      "writes": [
+        "s|fk|public.datasets.datasets_project_id_projects_id_fkey",
+        "n|fk|public.datasets.datasets_project_id_projects_id_fkey",
+        "e|fk|public.datasets.datasets_project_id_projects_id_fkey",
+        "n|con|public.datasets.datasets_project_id_projects_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.datasets",
+        "n|sch|public",
+        "n|tbl|public.projects",
+        "n|sch|public",
+        "n|col|public.datasets.project_id",
+        "n|col|public.projects.id",
+        "e|uniqueness|public.projects.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "evaluator_versions"],
+      "writes": [
+        "s|fk|public.evaluator_versions.evaluator_versions_evaluator_id_evaluators_id_fkey",
+        "n|fk|public.evaluator_versions.evaluator_versions_evaluator_id_evaluators_id_fkey",
+        "e|fk|public.evaluator_versions.evaluator_versions_evaluator_id_evaluators_id_fkey",
+        "n|con|public.evaluator_versions.evaluator_versions_evaluator_id_evaluators_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.evaluator_versions",
+        "n|sch|public",
+        "n|tbl|public.evaluators",
+        "n|sch|public",
+        "n|col|public.evaluator_versions.evaluator_id",
+        "n|col|public.evaluators.id",
+        "e|uniqueness|public.evaluators.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "evaluators"],
+      "writes": [
+        "s|fk|public.evaluators.evaluators_project_id_projects_id_fkey",
+        "n|fk|public.evaluators.evaluators_project_id_projects_id_fkey",
+        "e|fk|public.evaluators.evaluators_project_id_projects_id_fkey",
+        "n|con|public.evaluators.evaluators_project_id_projects_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.evaluators",
+        "n|sch|public",
+        "n|tbl|public.projects",
+        "n|sch|public",
+        "n|col|public.evaluators.project_id",
+        "n|col|public.projects.id",
+        "e|uniqueness|public.projects.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "evaluation_tasks"],
+      "writes": [
+        "s|fk|public.evaluation_tasks.evaluation_tasks_experiment_id_experiments_id_fkey",
+        "n|fk|public.evaluation_tasks.evaluation_tasks_experiment_id_experiments_id_fkey",
+        "e|fk|public.evaluation_tasks.evaluation_tasks_experiment_id_experiments_id_fkey",
+        "n|con|public.evaluation_tasks.evaluation_tasks_experiment_id_experiments_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.evaluation_tasks",
+        "n|sch|public",
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|col|public.evaluation_tasks.experiment_id",
+        "n|col|public.experiments.id",
+        "e|uniqueness|public.experiments.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "evaluation_tasks"],
+      "writes": [
+        "s|fk|public.evaluation_tasks.evaluation_tasks_dataset_item_id_dataset_items_id_fkey",
+        "n|fk|public.evaluation_tasks.evaluation_tasks_dataset_item_id_dataset_items_id_fkey",
+        "e|fk|public.evaluation_tasks.evaluation_tasks_dataset_item_id_dataset_items_id_fkey",
+        "n|con|public.evaluation_tasks.evaluation_tasks_dataset_item_id_dataset_items_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.evaluation_tasks",
+        "n|sch|public",
+        "n|tbl|public.dataset_items",
+        "n|sch|public",
+        "n|col|public.evaluation_tasks.dataset_item_id",
+        "n|col|public.dataset_items.id",
+        "e|uniqueness|public.dataset_items.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "experiment_evaluators"],
+      "writes": [
+        "s|fk|public.experiment_evaluators.experiment_evaluators_experiment_id_experiments_id_fkey",
+        "n|fk|public.experiment_evaluators.experiment_evaluators_experiment_id_experiments_id_fkey",
+        "e|fk|public.experiment_evaluators.experiment_evaluators_experiment_id_experiments_id_fkey",
+        "n|con|public.experiment_evaluators.experiment_evaluators_experiment_id_experiments_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.experiment_evaluators",
+        "n|sch|public",
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|col|public.experiment_evaluators.experiment_id",
+        "n|col|public.experiments.id",
+        "e|uniqueness|public.experiments.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "experiment_evaluators"],
+      "writes": [
+        "s|fk|public.experiment_evaluators.experiment_evaluators_N1ilezmDvYW9_fkey",
+        "n|fk|public.experiment_evaluators.experiment_evaluators_N1ilezmDvYW9_fkey",
+        "e|fk|public.experiment_evaluators.experiment_evaluators_N1ilezmDvYW9_fkey",
+        "n|con|public.experiment_evaluators.experiment_evaluators_N1ilezmDvYW9_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.experiment_evaluators",
+        "n|sch|public",
+        "n|tbl|public.evaluator_versions",
+        "n|sch|public",
+        "n|col|public.experiment_evaluators.evaluator_version_id",
+        "n|col|public.evaluator_versions.id",
+        "e|uniqueness|public.evaluator_versions.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "experiments"],
+      "writes": [
+        "s|fk|public.experiments.experiments_project_id_projects_id_fkey",
+        "n|fk|public.experiments.experiments_project_id_projects_id_fkey",
+        "e|fk|public.experiments.experiments_project_id_projects_id_fkey",
+        "n|con|public.experiments.experiments_project_id_projects_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|tbl|public.projects",
+        "n|sch|public",
+        "n|col|public.experiments.project_id",
+        "n|col|public.projects.id",
+        "e|uniqueness|public.projects.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "experiments"],
+      "writes": [
+        "s|fk|public.experiments.experiments_dataset_version_id_dataset_versions_id_fkey",
+        "n|fk|public.experiments.experiments_dataset_version_id_dataset_versions_id_fkey",
+        "e|fk|public.experiments.experiments_dataset_version_id_dataset_versions_id_fkey",
+        "n|con|public.experiments.experiments_dataset_version_id_dataset_versions_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|tbl|public.dataset_versions",
+        "n|sch|public",
+        "n|col|public.experiments.dataset_version_id",
+        "n|col|public.dataset_versions.id",
+        "e|uniqueness|public.dataset_versions.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "experiments"],
+      "writes": [
+        "s|fk|public.experiments.experiments_agent_version_id_agent_versions_id_fkey",
+        "n|fk|public.experiments.experiments_agent_version_id_agent_versions_id_fkey",
+        "e|fk|public.experiments.experiments_agent_version_id_agent_versions_id_fkey",
+        "n|con|public.experiments.experiments_agent_version_id_agent_versions_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|tbl|public.agent_versions",
+        "n|sch|public",
+        "n|col|public.experiments.agent_version_id",
+        "n|col|public.agent_versions.id",
+        "e|uniqueness|public.agent_versions.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "experiments"],
+      "writes": [
+        "s|fk|public.experiments.experiments_created_by_users_id_fkey",
+        "n|fk|public.experiments.experiments_created_by_users_id_fkey",
+        "e|fk|public.experiments.experiments_created_by_users_id_fkey",
+        "n|con|public.experiments.experiments_created_by_users_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.experiments",
+        "n|sch|public",
+        "n|tbl|public.users",
+        "n|sch|public",
+        "n|col|public.experiments.created_by",
+        "n|col|public.users.id",
+        "e|uniqueness|public.users.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "api_keys"],
+      "writes": [
+        "s|fk|public.api_keys.api_keys_project_id_projects_id_fkey",
+        "n|fk|public.api_keys.api_keys_project_id_projects_id_fkey",
+        "e|fk|public.api_keys.api_keys_project_id_projects_id_fkey",
+        "n|con|public.api_keys.api_keys_project_id_projects_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.api_keys",
+        "n|sch|public",
+        "n|tbl|public.projects",
+        "n|sch|public",
+        "n|col|public.api_keys.project_id",
+        "n|col|public.projects.id",
+        "e|uniqueness|public.projects.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "projects"],
+      "writes": [
+        "s|fk|public.projects.projects_workspace_id_workspaces_id_fkey",
+        "n|fk|public.projects.projects_workspace_id_workspaces_id_fkey",
+        "e|fk|public.projects.projects_workspace_id_workspaces_id_fkey",
+        "n|con|public.projects.projects_workspace_id_workspaces_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.projects",
+        "n|sch|public",
+        "n|tbl|public.workspaces",
+        "n|sch|public",
+        "n|col|public.projects.workspace_id",
+        "n|col|public.workspaces.id",
+        "e|uniqueness|public.workspaces.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "projects"],
+      "writes": [
+        "s|fk|public.projects.projects_created_by_users_id_fkey",
+        "n|fk|public.projects.projects_created_by_users_id_fkey",
+        "e|fk|public.projects.projects_created_by_users_id_fkey",
+        "n|con|public.projects.projects_created_by_users_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.projects",
+        "n|sch|public",
+        "n|tbl|public.users",
+        "n|sch|public",
+        "n|col|public.projects.created_by",
+        "n|col|public.users.id",
+        "e|uniqueness|public.users.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "evaluator_results"],
+      "writes": [
+        "s|fk|public.evaluator_results.evaluator_results_task_id_evaluation_tasks_id_fkey",
+        "n|fk|public.evaluator_results.evaluator_results_task_id_evaluation_tasks_id_fkey",
+        "e|fk|public.evaluator_results.evaluator_results_task_id_evaluation_tasks_id_fkey",
+        "n|con|public.evaluator_results.evaluator_results_task_id_evaluation_tasks_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.evaluator_results",
+        "n|sch|public",
+        "n|tbl|public.evaluation_tasks",
+        "n|sch|public",
+        "n|col|public.evaluator_results.task_id",
+        "n|col|public.evaluation_tasks.id",
+        "e|uniqueness|public.evaluation_tasks.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "evaluator_results"],
+      "writes": [
+        "s|fk|public.evaluator_results.evaluator_results_E8ZIxU8DR8gL_fkey",
+        "n|fk|public.evaluator_results.evaluator_results_E8ZIxU8DR8gL_fkey",
+        "e|fk|public.evaluator_results.evaluator_results_E8ZIxU8DR8gL_fkey",
+        "n|con|public.evaluator_results.evaluator_results_E8ZIxU8DR8gL_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.evaluator_results",
+        "n|sch|public",
+        "n|tbl|public.evaluator_versions",
+        "n|sch|public",
+        "n|col|public.evaluator_results.evaluator_version_id",
+        "n|col|public.evaluator_versions.id",
+        "e|uniqueness|public.evaluator_versions.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "workspace_members"],
+      "writes": [
+        "s|fk|public.workspace_members.workspace_members_workspace_id_workspaces_id_fkey",
+        "n|fk|public.workspace_members.workspace_members_workspace_id_workspaces_id_fkey",
+        "e|fk|public.workspace_members.workspace_members_workspace_id_workspaces_id_fkey",
+        "n|con|public.workspace_members.workspace_members_workspace_id_workspaces_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.workspace_members",
+        "n|sch|public",
+        "n|tbl|public.workspaces",
+        "n|sch|public",
+        "n|col|public.workspace_members.workspace_id",
+        "n|col|public.workspaces.id",
+        "e|uniqueness|public.workspaces.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "workspace_members"],
+      "writes": [
+        "s|fk|public.workspace_members.workspace_members_user_id_users_id_fkey",
+        "n|fk|public.workspace_members.workspace_members_user_id_users_id_fkey",
+        "e|fk|public.workspace_members.workspace_members_user_id_users_id_fkey",
+        "n|con|public.workspace_members.workspace_members_user_id_users_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.workspace_members",
+        "n|sch|public",
+        "n|tbl|public.users",
+        "n|sch|public",
+        "n|col|public.workspace_members.user_id",
+        "n|col|public.users.id",
+        "e|uniqueness|public.users.id"
+      ]
+    },
+    {
+      "statementType": "create_fk",
+      "statementTarget": ["table", "public", "workspaces"],
+      "writes": [
+        "s|fk|public.workspaces.workspaces_created_by_users_id_fkey",
+        "n|fk|public.workspaces.workspaces_created_by_users_id_fkey",
+        "e|fk|public.workspaces.workspaces_created_by_users_id_fkey",
+        "n|con|public.workspaces.workspaces_created_by_users_id_fkey"
+      ],
+      "reads": [
+        "n|tbl|public.workspaces",
+        "n|sch|public",
+        "n|tbl|public.users",
+        "n|sch|public",
+        "n|col|public.workspaces.created_by",
+        "n|col|public.users.id",
+        "e|uniqueness|public.users.id"
+      ]
+    }
+  ],
+  "ddl": [
+    {
+      "schema": "public",
+      "name": "agent_versions",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "agents",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "sessions",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "users",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "dataset_items",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "dataset_versions",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "datasets",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "evaluator_versions",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "evaluators",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "evaluation_tasks",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "experiment_evaluators",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "experiments",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "api_keys",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "projects",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "evaluator_results",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "workspace_members",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "workspaces",
+      "isRlsEnabled": false,
+      "entityType": "tables"
+    },
+    {
+      "schema": "public",
+      "name": "evaluator_kind",
+      "values": ["exact_match", "contains", "json_schema", "llm_judge"],
+      "entityType": "enums"
+    },
+    {
+      "schema": "public",
+      "name": "evaluator_result_status",
+      "values": ["succeeded", "failed", "skipped"],
+      "entityType": "enums"
+    },
+    {
+      "schema": "public",
+      "name": "experiment_status",
+      "values": ["draft", "queued", "running", "cancelling", "cancelled", "completed", "failed"],
+      "entityType": "enums"
+    },
+    {
+      "schema": "public",
+      "name": "task_status",
+      "values": [
+        "pending",
+        "queued",
+        "running",
+        "evaluating",
+        "succeeded",
+        "failed",
+        "cancelled",
+        "skipped"
+      ],
+      "entityType": "enums"
+    },
+    {
+      "schema": "public",
+      "name": "workspace_role",
+      "values": ["owner", "admin", "member"],
+      "entityType": "enums"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "agent_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "version",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "config",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "project_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "name",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "description",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "user_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "token_hash",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "expires_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "email",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "name",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "password_hash",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "updated_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "dataset_version_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "external_id",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "input",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "expected",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "metadata",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'{}'",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "position",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "dataset_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "version",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "content_hash",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "project_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "name",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "description",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "updated_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "evaluator_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "version",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "kind",
+      "type": "evaluator_kind",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "config",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluators",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluators",
+      "name": "project_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluators",
+      "name": "name",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluators",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "experiment_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "dataset_item_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "status",
+      "type": "task_status",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'pending'",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "attempt_count",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "0",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "started_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "finished_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "output",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "usage",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "error",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "experiment_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "evaluator_version_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "position",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "threshold",
+      "type": "double precision",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "0.5",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "project_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "name",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "status",
+      "type": "experiment_status",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'draft'",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "dataset_version_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "agent_version_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "concurrency_limit",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "10",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "timeout_ms",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "30000",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "max_retries",
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "2",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "created_by",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "started_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "completed_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "updated_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "project_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "name",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "key_prefix",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "key_hash",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "workspace_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "name",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "description",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "created_by",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "task_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "evaluator_version_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "status",
+      "type": "evaluator_result_status",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'succeeded'",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "score",
+      "type": "double precision",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "passed",
+      "type": "boolean",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "reason",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "metadata",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'{}'",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "error",
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "workspace_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "user_id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "role",
+      "type": "workspace_role",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'member'",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspaces",
+      "name": "id",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspaces",
+      "name": "name",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspaces",
+      "name": "description",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspaces",
+      "name": "created_by",
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "workspaces",
+      "name": "created_at",
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "agent_versions_agent_version_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "agent_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "version",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "agents_project_name_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "project_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "name",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "agents_project_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "project_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "sessions_token_hash_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "token_hash",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "sessions_user_expires_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "user_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "expires_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "sessions_expires_at_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "expires_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "users_email_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "email",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "dataset_items_version_external_id_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "dataset_version_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "external_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "dataset_items_version_position_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "dataset_version_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "position",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "dataset_items_metadata_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "metadata",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "gin",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "dataset_versions_dataset_version_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "dataset_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "version",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "datasets_project_name_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "project_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "name",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "datasets_project_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "project_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "evaluator_versions_evaluator_version_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "evaluator_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "version",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluators",
+      "name": "evaluators_project_name_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "project_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "name",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluators",
+      "name": "evaluators_project_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "project_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "evaluation_tasks_experiment_item_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "experiment_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "dataset_item_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "evaluation_tasks_experiment_status_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "experiment_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "status",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "evaluation_tasks_status_started_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "status",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "started_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "evaluation_tasks_dataset_item_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "dataset_item_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "experiment_evaluators_experiment_evaluator_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "experiment_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "evaluator_version_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "experiment_evaluators_experiment_position_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "experiment_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "position",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "experiment_evaluators_evaluator_version_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "evaluator_version_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_project_created_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "project_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "created_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_status_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "status",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_dataset_version_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "dataset_version_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_agent_version_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "agent_version_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "api_keys_key_hash_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "key_hash",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "api_keys_project_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "project_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "projects_workspace_name_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "workspace_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "name",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "projects_workspace_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "workspace_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "evaluator_results_task_evaluator_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "task_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "evaluator_version_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "evaluator_results_task_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "task_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "evaluator_results_evaluator_status_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "evaluator_version_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "status",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "workspace_members_workspace_user_unique",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "workspace_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "user_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "workspace_members_user_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "user_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "workspaces",
+      "name": "workspaces_created_by_idx",
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "created_by",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "entityType": "indexes"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "agent_versions_agent_id_agents_id_fkey",
+      "nameExplicit": false,
+      "columns": ["agent_id"],
+      "schemaTo": "public",
+      "tableTo": "agents",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "agents_project_id_projects_id_fkey",
+      "nameExplicit": false,
+      "columns": ["project_id"],
+      "schemaTo": "public",
+      "tableTo": "projects",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "sessions_user_id_users_id_fkey",
+      "nameExplicit": false,
+      "columns": ["user_id"],
+      "schemaTo": "public",
+      "tableTo": "users",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "dataset_items_dataset_version_id_dataset_versions_id_fkey",
+      "nameExplicit": false,
+      "columns": ["dataset_version_id"],
+      "schemaTo": "public",
+      "tableTo": "dataset_versions",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "dataset_versions_dataset_id_datasets_id_fkey",
+      "nameExplicit": false,
+      "columns": ["dataset_id"],
+      "schemaTo": "public",
+      "tableTo": "datasets",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "datasets_project_id_projects_id_fkey",
+      "nameExplicit": false,
+      "columns": ["project_id"],
+      "schemaTo": "public",
+      "tableTo": "projects",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "evaluator_versions_evaluator_id_evaluators_id_fkey",
+      "nameExplicit": false,
+      "columns": ["evaluator_id"],
+      "schemaTo": "public",
+      "tableTo": "evaluators",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluators",
+      "name": "evaluators_project_id_projects_id_fkey",
+      "nameExplicit": false,
+      "columns": ["project_id"],
+      "schemaTo": "public",
+      "tableTo": "projects",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "evaluation_tasks_experiment_id_experiments_id_fkey",
+      "nameExplicit": false,
+      "columns": ["experiment_id"],
+      "schemaTo": "public",
+      "tableTo": "experiments",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "evaluation_tasks_dataset_item_id_dataset_items_id_fkey",
+      "nameExplicit": false,
+      "columns": ["dataset_item_id"],
+      "schemaTo": "public",
+      "tableTo": "dataset_items",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "RESTRICT",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "experiment_evaluators_experiment_id_experiments_id_fkey",
+      "nameExplicit": false,
+      "columns": ["experiment_id"],
+      "schemaTo": "public",
+      "tableTo": "experiments",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "experiment_evaluators_N1ilezmDvYW9_fkey",
+      "nameExplicit": false,
+      "columns": ["evaluator_version_id"],
+      "schemaTo": "public",
+      "tableTo": "evaluator_versions",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "RESTRICT",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_project_id_projects_id_fkey",
+      "nameExplicit": false,
+      "columns": ["project_id"],
+      "schemaTo": "public",
+      "tableTo": "projects",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_dataset_version_id_dataset_versions_id_fkey",
+      "nameExplicit": false,
+      "columns": ["dataset_version_id"],
+      "schemaTo": "public",
+      "tableTo": "dataset_versions",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "RESTRICT",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_agent_version_id_agent_versions_id_fkey",
+      "nameExplicit": false,
+      "columns": ["agent_version_id"],
+      "schemaTo": "public",
+      "tableTo": "agent_versions",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "RESTRICT",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_created_by_users_id_fkey",
+      "nameExplicit": false,
+      "columns": ["created_by"],
+      "schemaTo": "public",
+      "tableTo": "users",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "SET NULL",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "api_keys_project_id_projects_id_fkey",
+      "nameExplicit": false,
+      "columns": ["project_id"],
+      "schemaTo": "public",
+      "tableTo": "projects",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "projects_workspace_id_workspaces_id_fkey",
+      "nameExplicit": false,
+      "columns": ["workspace_id"],
+      "schemaTo": "public",
+      "tableTo": "workspaces",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "projects_created_by_users_id_fkey",
+      "nameExplicit": false,
+      "columns": ["created_by"],
+      "schemaTo": "public",
+      "tableTo": "users",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "SET NULL",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "evaluator_results_task_id_evaluation_tasks_id_fkey",
+      "nameExplicit": false,
+      "columns": ["task_id"],
+      "schemaTo": "public",
+      "tableTo": "evaluation_tasks",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "evaluator_results_E8ZIxU8DR8gL_fkey",
+      "nameExplicit": false,
+      "columns": ["evaluator_version_id"],
+      "schemaTo": "public",
+      "tableTo": "evaluator_versions",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "RESTRICT",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "workspace_members_workspace_id_workspaces_id_fkey",
+      "nameExplicit": false,
+      "columns": ["workspace_id"],
+      "schemaTo": "public",
+      "tableTo": "workspaces",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "workspace_members_user_id_users_id_fkey",
+      "nameExplicit": false,
+      "columns": ["user_id"],
+      "schemaTo": "public",
+      "tableTo": "users",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "workspaces",
+      "name": "workspaces_created_by_users_id_fkey",
+      "nameExplicit": false,
+      "columns": ["created_by"],
+      "schemaTo": "public",
+      "tableTo": "users",
+      "columnsTo": ["id"],
+      "onUpdate": "NO ACTION",
+      "onDelete": "SET NULL",
+      "entityType": "fks"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "agent_versions_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "agents",
+      "name": "agents_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "name": "sessions_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "users_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "dataset_items_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "dataset_versions_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "datasets",
+      "name": "datasets_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "evaluator_versions_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluators",
+      "name": "evaluators_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "evaluation_tasks_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "experiment_evaluators_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "api_keys",
+      "name": "api_keys_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "projects",
+      "name": "projects_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "evaluator_results_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "workspace_members",
+      "name": "workspace_members_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "workspaces",
+      "name": "workspaces_pkey",
+      "columns": ["id"],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "schema": "public",
+      "table": "agent_versions",
+      "name": "agent_versions_version_positive",
+      "value": "\"version\" > 0",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "users_email_lowercase",
+      "value": "\"email\" = lower(\"email\")",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_items",
+      "name": "dataset_items_position_non_negative",
+      "value": "\"position\" >= 0",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "dataset_versions",
+      "name": "dataset_versions_version_positive",
+      "value": "\"version\" > 0",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_versions",
+      "name": "evaluator_versions_version_positive",
+      "value": "\"version\" > 0",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluation_tasks",
+      "name": "evaluation_tasks_attempt_count_non_negative",
+      "value": "\"attempt_count\" >= 0",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "experiment_evaluators",
+      "name": "experiment_evaluators_threshold_range",
+      "value": "\"threshold\" >= 0 and \"threshold\" <= 1",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_concurrency_positive",
+      "value": "\"concurrency_limit\" > 0",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_timeout_positive",
+      "value": "\"timeout_ms\" > 0",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "experiments",
+      "name": "experiments_max_retries_non_negative",
+      "value": "\"max_retries\" >= 0",
+      "entityType": "checks"
+    },
+    {
+      "schema": "public",
+      "table": "evaluator_results",
+      "name": "evaluator_results_score_range",
+      "value": "\"score\" is null or (\"score\" >= 0 and \"score\" <= 1)",
+      "entityType": "checks"
+    }
+  ]
+}

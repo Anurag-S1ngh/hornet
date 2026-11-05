@@ -3,6 +3,9 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./schema": "./src/schema/index.ts",
+    "./schema/*": "./src/schema/*.ts",
+    "./relations": "./src/relations.ts",
     "./*": "./src/*.ts"
   },
   "scripts": {
